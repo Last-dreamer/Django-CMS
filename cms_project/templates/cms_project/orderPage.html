@@ -1,0 +1,26 @@
+{% extends 'cms_project/main.html' %}
+{% load static %}
+{% block content %}
+
+<hr />
+<br>
+
+    <div class="col md-8" >
+        <h5 class="text-center">Create a multiple Orders</h5>
+        <div class="card card-body bg-dark text-light text-center box">
+
+                        <form action ="" method="POST">
+                               {% csrf_token %}
+                                {{form_set.management_form}}
+                                 {% for i in form_set %}
+                                  <div class="link fields">{{i}}</div>
+                                <hr class="bg-light" width="50%"/>
+                              {% endfor %}
+                               <input type="submit" value="Done !" class="btn btn-sm btn-info btn3d"/>
+                       </form>
+
+
+        </div>
+    </div>
+
+{% endblock %}

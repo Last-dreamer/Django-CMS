@@ -1,0 +1,34 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CMS Registry</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/register.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/btnAnimation.css' %}"/>
+</head>
+<body>
+
+<form class="box"  method="POST" >
+   {% csrf_token %}
+  <h1>SignUp Here &#8595</h1>
+
+  <div class="fields"> {{form.username}}</div>
+  <div class="fields"> {{form.email}}</div>
+  <div class="fields"> {{form.password1}}</div>
+  <div class="fields"> {{form.password2}}</div>
+
+ <div class="errors">{{form.errors}}</div>
+
+ <div class="outer">
+  <div class="text">
+    <button class="button text">SignUp</button>
+  </div>
+
+     <h6 class="errors">Already having Account! <a  class="link" href="{% url 'login' %}">Login</a></h6>
+
+</div>
+
+</form>
+
+</body>
+</html>
